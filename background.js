@@ -20,5 +20,6 @@
   chrome.webRequest.onBeforeRequest.addListener( cancel, { urls }, [ 'blocking' ] )
 
   // record extension activation time
-  chrome.storage.sync.set({ activated: +new Date })
+  chrome.storage.sync.get('activated', data =>
+    data.activated || chrome.storage.sync.set({ activated: +new Date }))
 })(['*://*.youtube.com/*'])
