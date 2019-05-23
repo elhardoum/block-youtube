@@ -4,12 +4,15 @@
   "description": "Lets you block YouTube content and have productive days.",
   "permissions": [
     "*://www.youtube.com/*", "*://youtube.com/*",
-    "webRequest", "webRequestBlocking"
+    "webRequest", "webRequestBlocking", "storage"
   ],
   "background": {
     "scripts": [
       "background.js"
     ]
   },
-  "manifest_version": 2
+  "manifest_version": 2,
+  "browser_action": {
+    "default_popup": "popup.html"
+  }
 }
